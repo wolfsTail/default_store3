@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% comment %} {% load thumbnail %} {% endcomment %}
+
+{% block content %}
+
+<!-- Introduction section -->
+{% if not request.user.is_authenticated %}
+<section class="py-4 text-center container">
+  <div class="row py-lg-5">
+    <div class="col-lg-6 col-md-8 mx-auto">
+      <h4>Выберите интересующий вас продукт</h4>
+
+      <br />
+
+      <p class="lead text-muted">Лучшая сделка</p>
+
+      <br />
+
+      <a href="#" class="btn btn-success my-2"> Зарегистрирутесь (добавь ссылку) </a>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- All products section -->
+
+<section class="album py-5 bg-light">
+  <div class="container">
+    <div class="pb-3 h5">Все товары</div>
+
+    <hr />
+
+    <br />
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
+
+      {% include 'shop/components/product_list.html' %}
+    </div>
+  </div>
+</section>
+{% endblock %}
