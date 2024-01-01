@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-nuj+s7%3z3clc8*-+ad3swz&*9(0&@&s_i3&dz9=9$umsoru&+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -39,8 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # my apps
+    # inner apps
     'shop.apps.ShopConfig',
+    'cart.apps.CartConfig',
+    # third party apps
+    'mathfilters',
 ]
 
 MIDDLEWARE = [
@@ -68,6 +71,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 # my context processors
                 'shop.context_processors.categories',
+                'cart.context_processors.cart',
             ],
         },
     },

@@ -79,14 +79,14 @@
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
                     <a class="nav-link mx-2 text-uppercase" href="{% url 'cart:cart-view' %}"> <i
-                            class="fa fa-shopping-cart" aria-hidden="true"> </i> Cart
+                            class="fa fa-shopping-cart" aria-hidden="true"> </i> Корзина
                         <span id="lblCartCount" class="badge badge-warning ">
 
                             {% with cart_qty=cart|length%}
                             {% if cart_qty > 0 %}
                             {{cart_qty}}
                             {% else %}
-                            0
+                            -
                             {% endif %}
 
                             {% endwith %}
