@@ -1,0 +1,36 @@
+{%  extends "base.html" %}
+
+{% load static %}
+
+
+
+{% block content %}
+
+    <br>
+    <div class="container bg-white shadow-md p-3">
+        <h4>Доброго времени, {{ user.username }}!</h4>
+
+        <hr>
+
+        <h6>Личная информация</h6>
+
+        <a href="{% url 'account:logout' %}">
+        <button class="btn btn-primary">
+            Выход
+            </button>
+        </a>
+
+        <a href="{% url 'account:profile-management' %}">
+            <button class="btn btn-success">
+                Корректирвока информации профиля
+                </button>
+            </a>
+        
+            <a href="{% url 'account:delete-user' %}">
+                <button class="btn btn-warning">
+                    Удалить аккаунт
+                    </button>
+                </a>
+
+    </div>
+{% endblock %}
